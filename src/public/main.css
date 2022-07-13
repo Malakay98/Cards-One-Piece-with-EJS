@@ -1,0 +1,156 @@
+body {
+  background-image: linear-gradient(301deg, #3e84af 0%, #239688 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Cormorant SC", serif;
+  font-size: 18px;
+}
+
+p,
+a,
+input {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+body .options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 1400px;
+  width: calc(100% - 100px);
+  height: 400px;
+  margin: 100px auto;
+}
+body .options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.8s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option:hover {
+  box-shadow: 0px 0px 5px 5px rgba(1, 20, 24, 0.5);
+}
+body .options .option.active {
+  flex-grow: 9000;
+  transform: scale(1);
+  max-width: 700px;
+  margin: 0px;
+  border-radius: 50px;
+  background-size: auto 100%;
+}
+body .options .option.active:hover {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+}
+body .options .option.active .shadow {
+  box-shadow: inset 0 -20px 20px -20px black, inset 0 -20px 20px -20px black;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+body .options .option.active .label {
+  bottom: 40px;
+  left: 20px;
+}
+body .options .option.active .label .info > div h1 {
+  left: 0px;
+  opacity: 1;
+}
+body .options .option.active .label .info > div p {
+  left: 0px;
+  opacity: 1;
+}
+body .options .option:not(.active) {
+  flex-grow: 1;
+  border-radius: 30px;
+  background-position: center;
+}
+body .options .option:not(.active) .shadow {
+  bottom: -40px;
+  box-shadow: inset 0 -120px 0px -120px rgb(83, 40, 40),
+    inset 0 -120px 0px -100px black;
+}
+body .options .option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+body .options .option:not(.active) .label .info > div h1,
+p {
+  left: 20px;
+  opacity: 0;
+}
+body .options .option .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option .label {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+body .options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  max-width: 60px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: var(--defaultBackground);
+}
+body .options .option .label .icon img {
+  min-width: 60px;
+  max-width: 60px;
+  border-radius: 50%;
+}
+body .options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #212123;
+  color: var(--defaultBackground);
+}
+body .options .option .label .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+  color: white;
+}
+body .options .option .label .info div {
+  position: relative;
+  transition: 0.2s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.2s ease-out;
+}
+body .options .option .label .info .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+body .options .option .label .info .sub {
+  transition-delay: 0.1s;
+}
